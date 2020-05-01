@@ -1,0 +1,61 @@
+<div class="container">
+<table>
+		<tr>
+		<td rowspan="9">
+			<img src="../assets/images/consult.png" alt="Image" height="300 px" width="300px">
+		</td>
+	<tr>
+		<td>Medecin : </td>
+		<td>{{getmedecinLastName()}} {{getmedecinFirstName()}}</td>
+		
+	</tr>
+	<tr>
+		<td colspan="2">
+		<a [routerLink]=" '/medecins/'+getmedecinLastName()">Détail Medecin</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Patient : </td>
+		<td>{{getPatientLastName()}} {{GetPatientFirstName()}}</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Heure : </p>
+		</td>
+		<td>
+			<p>{{heure}} h</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Date : </p>
+		</td>
+		<td>
+			<p>{{date}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Type : </p>
+		</td>
+		<td>
+			<p *ngIf="type === 0">Premiere consultation</p>
+			<p *ngIf="type === 1">Suivit</p>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p> Tarif : </p>
+		</td>
+		<td>
+			<p> {{tarifConsultation}}  $ </p>
+		</td>
+	</tr>
+	
+</table>
+
+<!--h3>Patient : {{getPatientLastName()}} {{GetPatientFirstName()}} </h3-->
+
+<a routerLink="/consultations">Retour aux rendez-vous </a>
+</div>

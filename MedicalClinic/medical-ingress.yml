@@ -1,0 +1,36 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-service1-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: medical-clinic.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: medical-clinic-service
+          servicePort: http
+  - host: imagerie.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: imagerie-service
+          servicePort: http
+  - host: depistage.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: depistage-service
+          servicePort: http
+  - host: medical-service.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: front-end-service
+          servicePort: http

@@ -1,0 +1,47 @@
+<div class="container">
+<h2>{{getPatientLastName()}} {{GetPatientFirstName()}}</h2>
+
+<table>
+		<tr>
+		<td rowspan="5" >
+			<img src="../assets/images/doctoor.jpg" alt="Image" height="250px" width="250px">
+		</td>
+
+	<tr>
+		<td>
+			<p>Heure : </p>
+		</td>
+		<td>
+			<p>{{heure}} h</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Date : </p>
+		</td>
+		<td>
+			<p>{{date}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Type : </p>
+		</td>
+		<td>
+			<p> {{type}}</p>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p> Tarif : </p>
+		</td>
+		<td>
+			<p>{{ tarif   }} $ </p>
+		</td>
+	</tr>
+	
+</table>
+
+
+<a routerLink="/depistages">Retour aux rendez-vous de depistage </a>

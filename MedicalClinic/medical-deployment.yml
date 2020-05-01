@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clinic-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: medical-clinic
+  template:
+    metadata:
+      labels:
+        app: medical-clinic
+    spec:
+      containers:
+      - name: medical-clinic-container
+        image: nadaikram/clinic-image:latest

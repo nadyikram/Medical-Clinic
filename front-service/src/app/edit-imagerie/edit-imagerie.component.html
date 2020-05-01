@@ -1,0 +1,102 @@
+<div class="container">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+       <div class="form-group">
+        <label for="pname">Nom du patient: </label>
+        <input type="text" id="pname" class="form-control" name="pname" ngModel required>
+      </div>
+      <div class="form-group">
+      	<label for="appointement">Date du rendez-vous:</label>
+	    <input type="date" id="appointement" value="2020-04-22" min="2020-04-04" max="2020-12-31" name="appointement" ngModel required>
+      </div>
+      <div class="form-group" f>
+      	<label or="heure">Heure du rendez-vous:</label>
+		<input type="time" id="heure"  min="08:00" max="17:00" required name="heure" ngModel required>
+		<small>Horaire de travail de 8h a 17h</small>
+      </div>
+      <div class="form-group" >
+      	<form (ngSubmit)="onSubmitf(f)" #f="ngForm">
+        <label for="Gtype"> Type d'imagerie: </label>
+        <select id="Gtype" class="form-control" name="Gtype" ngModel required>
+          <option value="Echographie">Echographie</option>
+          <option value="Radiographie">Radiographie</option>
+          <option value="IRM">IRM</option>
+          <option value="Scanner">Scanner</option>
+          <option value="Endoscopie">Endoscopie</option>
+          <option value="Scintigraphie">Scintigraphie</option>
+
+          
+        </select>
+      			<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Choisir</button>
+        </form>
+      </div>
+
+
+      <div class="form-group" *ngIf="getType() === 'Echographie'" >
+      <label for="type"> Nom d'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="Echographie mammaire">Echographie mammaire</option>
+          <option value="Echographie obstétricale">Echographie obstétricale</option>
+          <option value="Echographie pelvienne">Echographie pelvienne</option>
+          <option value="Echographie cardiaque">Echographie cardiaque ou échocardiographie</option>
+          <option value="Doppler">Doppler</option>
+        </select>
+      </div>
+
+      <div class="form-group" *ngIf="getType() === 'Radiographie'" >
+      <label for="type"> Nom de l'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="Radiographie osseuse">Radiographie osseuse</option>
+          <option value="Radiographie pulmonaire">Radiographie pulmonaire</option>
+          <option value="Mammographie">Mammographie</option>
+          <option value="Angiographie">Angiographie</option>
+
+        </select>
+      </div>
+		<div class="form-group" *ngIf="getType() === 'IRM'" >
+      	<label for="type"> Nom de l'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="IRM">IRM</option>
+        </select>
+      	</div>
+
+      <div class="form-group" *ngIf="getType() === 'Scanner'" >
+      <label for="type"> Nom de l'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="Scanner">Scanner</option>
+          <option value="Scanner cérébral">Scanner cérébral</option>
+          <option value="Scanner coronaire">Scanner coronaire ou coroscanner</option>
+        </select>
+      </div>
+
+      <div class="form-group" *ngIf="getType() === 'Endoscopie'" >
+      <label for="type"> Nom de l'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="Arthroscopie">Arthroscopie</option>
+          <option value="Cystoscopie">Cystoscopie</option>
+          <option value="Coloscopie">Coloscopie</option>
+          <option value="Endoscopie">Endoscopie ou fibroscopie</option>
+          <option value="Fibroscopie bronchique">Fibroscopie bronchique</option>
+          <option value="Hystéroscopie">Hystéroscopie</option>
+        </select>
+      </div>
+
+      <div class="form-group" *ngIf="getType() === 'Scintigraphie'" >
+      <label for="type"> Nom de l'imagerie:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="Scintigraphie cérébrale">Scintigraphie cérébrale</option>
+          <option value="Scintigraphie osseuse">Scintigraphie osseuse</option>
+          <option value="Scintigraphie cardiaque">Scintigraphie cardiaque</option>
+          <option value="Scintigraphie pulmonaire">Scintigraphie pulmonaire</option>
+          <option value="Scintigraphie thyroïdienne">Scintigraphie thyroïdienne</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="formulaire.invalid || !v">Enregistrer</button>
+    </form>
+  </div>
+</div>
+<div>
+<a routerLink="/imageries"><h6>Aller aux rendez-vous d'imagerie</h6></a>
+</div>
+</div>

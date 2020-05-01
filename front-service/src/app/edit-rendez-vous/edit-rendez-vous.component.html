@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+      <div class="form-group">
+        <label for="dname"> Nom du medecin:   </label>
+        <input type="text" id="dname" class="form-control" name="dname" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="pname">Nom du patient:</label>
+        <input type="text" id="pname" class="form-control" name="pname" ngModel required>
+      </div>
+      <div class="form-group">
+      	<label for="appointement">Date du rendez-vous:</label>
+	    <input type="date" id="appointement" value="2020-04-22" min="2020-04-04" max="2020-12-31" name="appointement" ngModel required>
+      </div>
+      <div>
+      	<label for="heure">Choose a time for your meeting:   </label>
+		<input type="time" id="heure"  min="08:00" max="17:00" required name="heure" ngModel required>
+		<small>Horaire de travail de 8h a 17h</small>
+      </div>
+      <div class="form-group" >
+        <label for="specialite"> Specialité du medecin: </label>
+        <select id="specialite" class="form-control" name="specialite" ngModel>
+          <option value="généraliste">Généraliste</option>
+          <option value="cardiologue">Cardiologue</option>
+          <option value="chirurgien">Chirurgien</option>
+          <option value="gynécologue">Gynécologue</option>
+          <option value="neurologue">Neurologue</option>
+          <option value="pédiatre">Pédiatre</option>
+          <option value="psychiatre">Psychiatre</option>
+          <option value="urologue">Urologue</option>
+          <option value="pneumologue">Pneumologue</option>
+          <option value="rhumatologue">Rhumatologue</option>
+          <option value="andrologue">Andrologue</option>
+          
+          
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="type">Type du rendez-vous: </label>
+        <select id="type" class="form-control" name="type" ngModel required>
+          <option value="Premiere Consultation">Première Consultation</option>
+          <option value="suivit">Suivit</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="formulaire.invalid">Enregistrer</button>
+    </form>
+  </div>
+</div>
+<div>
+<a routerLink="/medecins"><h6>Aller à la liste des medecins</h6></a>
+</div>

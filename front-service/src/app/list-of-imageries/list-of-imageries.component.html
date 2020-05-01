@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			 <h2> Rendez-vous Imageries: </h2>
+    		<ul class="list-group">
+      		<app-imagerie *ngFor="let x of imageries let i = index"
+      				[id]="x.id"
+      				[date]="x.date" 
+      				[heure]="x.heure" 
+             		[type]="x.type"
+              		[tarif]="x.tarif"
+              		[patient]="x.patient"
+                    ></app-imagerie>
+
+        <button class="btn btn-primary" (click)="onFetch()">Actualiser</button>
+    </ul>
+		</div>
+    </div>
+</div>

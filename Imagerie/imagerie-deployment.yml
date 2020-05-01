@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imagerie-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: imagerie
+  template:
+    metadata:
+      labels:
+        app: imagerie
+    spec:
+      containers:
+      - name: imagerie-container
+        image: nadaikram/imagerie-image:latest

@@ -1,0 +1,16 @@
+<div class="container"> 
+ <h2> Nos Medecins: </h2>
+    <p>Date actuelle: {{ lastUpdate | async | date: 'short'}}</p>
+    <ul class="list-group">
+      <app-medecin *ngFor="let x of medecins let i = index"
+      				[id]="i" 
+      				[lastname]="x.lastname" 
+              [firstname]="x.firstname"
+              [age]="x.age"
+              [gender]="x.gender"
+              [specialty]="x.specialty" 
+      				[disponible]=x.disponible 
+      				[tarif]="x.tarif"></app-medecin>
+    </ul>
+    <button class="btn btn-primary" (click)="onFetch()">Actualiser </button>
+</div>

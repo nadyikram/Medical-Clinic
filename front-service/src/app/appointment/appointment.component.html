@@ -1,0 +1,8 @@
+<li [ngClass]="{'list-group-item': true }">
+	<h4 class="list-group-item-heading"> Medecin: {{ medecin.lastname }} {{ medecin.firstname }}</h4>
+	<h5 class="list-group-item-text">Patient: {{  getPatientLastName() }} {{ GetPatientFirstName() }}</h5>
+	<p class="list-group-item-text"> Le:  {{ date}} à: {{ heure}} h </p>
+	<a [routerLink]="'/consultations/' + id">Détails</a>
+
+</li>
+

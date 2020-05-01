@@ -1,0 +1,15 @@
+
+ <h2> Les Rendez-vous</h2>
+    <ul class="list-group">
+      <app-appointment *ngFor="let x of consultations let i = index"
+      				[id]="x.id"
+      				[date]="x.date" 
+      				[heure]="x.heure" 
+             		[type]="x.type"
+              		[tarifConsultation]="x.tarifConsultation"
+              		[medecin]="x.medecin"
+              		[patient]="x.patient"
+                    ></app-appointment>
+
+        <button class="btn btn-primary" (click)="onFetch()">Actualiser</button>
+    </ul>

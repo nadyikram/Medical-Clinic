@@ -1,0 +1,49 @@
+<div class="container">
+<h2>{{getFirstname() }} {{ getLastname() }}</h2>
+<table>
+	<tr>
+		<td rowspan="7" *ngIf="getGender() === 'Femme'">
+			<img src="../assets/images/doctor.png" alt="Image" height="300px" width="300px">
+		</td>
+		<td rowspan="7" *ngIf="getGender() === 'Homme'">
+			<img src="../assets/images/doctorr.png" alt="Image" height="300px" width="300px">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Age: </p>
+		</td>
+		<td>
+			<p>{{getAge()}} ans </p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Sexe: </p>
+		</td>
+		<td>
+			<p>{{getGender()}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Specialite: </p>
+		</td>
+		<td>
+			<p>{{ getSpecialty()}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p> Tarif de consultation: </p>
+		</td>
+		<td>
+			<p>{{  getTarif()  }} $</p>
+		</td>
+	</tr>
+
+</table>
+
+
+<a routerLink="/medecins" role="button">Retour à la liste des medecins </a>
+</div>

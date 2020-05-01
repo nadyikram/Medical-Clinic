@@ -1,0 +1,49 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!--dir class="row fondecran"-->
+  
+<img [src]="imagelink" alt="Image" height="100%" width="100%">
+
+<div id="demoFont">
+<nav class="navbar navbar-inverse navbar-expand-sm ">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+
+      <ul class="nav navbar-nav">
+        
+        <li routerLinkActive="active"><a routerLink="medecins"><i class="fa fa-user-md"></i> Medecins</a></li>
+         
+
+        <li routerLinkActive="active"><a routerLink="ServiceConsultation"><i class="fa fa-stethoscope"></i> Service Consultation</a></li>
+        <li routerLinkActive="active"><a routerLink="rendez-vous"><span class="glyphicon glyphicon-calendar"></span> Rendez-vous Consultation</a></li>
+        <li routerLinkActive="active"><a routerLink="consultations"><span class="glyphicon glyphicon-th-list"></span> Les Rendez-vous Consultation</a></li>
+
+        <li routerLinkActive="active"><a routerLink="ServiceImageries"><i class="fa fa-heartbeat"></i> Service d'imagerie</a></li>
+         <li routerLinkActive="active"><a routerLink="rendez-vous-imagerie"><span class="glyphicon glyphicon-calendar"></span> Rendez-vous Imagerie</a></li>
+         <li routerLinkActive="active"><a routerLink="imageries"><span class="glyphicon glyphicon-th-list"></span> Les Rendez-vous Imagerie</a></li>
+
+          <li routerLinkActive="active"><a routerLink="ServiceDepistage"><span class="glyphicon glyphicon-tint"></span> Service Depistage</a></li>
+         <li routerLinkActive="active"><a routerLink="rendez-vous-depistage"><span class="glyphicon glyphicon-calendar"></span> Rendez-vous Depisage</a></li>
+         <li routerLinkActive="active"><a routerLink="depistages"><span class="glyphicon glyphicon-th-list"></span> Les Rendz-vous Depistage</a></li>
+
+         <ul class="nav navbar-nav navbar-right">
+          <li routerLinkActive="active"><a routerLink="user"> Patients</a></li>
+        <li routerLinkActive="active"><a routerLink="auth"><span class="glyphicon glyphicon-user"></span> Authentification</a></li>
+        </ul>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+</div>
+<!--/dir-->
+</body>

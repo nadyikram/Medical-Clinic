@@ -1,0 +1,26 @@
+<div class="container">
+<ul class="list-group">
+	<li class="list-group-item" *ngFor="let user of users">
+		<h3>{{ user.lastname}} {{ user.firstname}} </h3>
+		<tr> 
+			<td>Age: </td>
+			<td>
+		      <p>{{user.age}} ans </p>	
+			</td>
+		</tr>
+		<tr>
+			<td>Sex:  </td>
+			<td><p> {{ user.gender}}</p></td>
+		</tr>
+		<tr>
+			<td>email: </td>
+			<td><p>{{ user.email }}</p></td>
+		</tr>
+		<tr>
+			<td>Phone:  </td>
+			<td><p>{{ user.phone}}</p></td>
+		</tr>
+		
+	</li>
+</ul>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+	<h3> {{getPatientLastName()}} {{GetPatientFirstName()}}</h3>
+
+
+<table>
+		<tr>
+		<td rowspan="7" *ngIf="type === 'Scanner'|| type == 'Scanner cérébral' || type ==='Scanner coronaire' ">
+			<img src="../assets/images/scanner.jpg" alt="Image" height="200 px" width="200px">
+		</td>
+		<td rowspan="7" *ngIf="type === 'Radiographie osseuse' || type === 'Radiographie pulmonaire'|| type === 'Mammographie'|| type === 'Angiographie'">
+			<img src="../assets/images/radio.jpg" alt="Image" height="200 px" width="200px">
+		</td>
+
+		<td rowspan="7" *ngIf="type === 'Echographie mammaire' || type === 'Echographie obstétricale'|| type === 'Echographie pelvienne'|| type === 'Echographie cardiaque' || type ==='Doppler'">
+			<img src="../assets/images/eco.jpg" alt="Image" height="200 px" width="200px">
+		</td>
+		<td rowspan="7" *ngIf="type === 'IRM'">
+			<img src="../assets/images/irm2.jpg" alt="Image" height="200px" width="200px">
+		</td>
+		<td rowspan="7" *ngIf="type === 'Arthroscopie' || type === 'Cystoscopie'|| type === 'Coloscopie'|| type === 'Endoscopie'|| type === 'Fibroscopie bronchique'|| type === 'Hystéroscopie'">
+			<img src="../assets/images/endoscop.jpg" alt="Image" height="200 px" width="200px">
+		</td>
+		<td rowspan="7" *ngIf="type === 'Scintigraphie cérébrale'|| type === 'Scintigraphie cardiaque'|| type === 'Scintigraphie osseuse'|| type === 'Scintigraphie pulmonaire'|| type === 'Scintigraphie thyroïdienne'">
+			<img src="../assets/images/scinti.png" alt="Image" height="200px" width="200px">
+		</td>
+	
+	</tr>
+
+	<tr>
+		<td>
+			<p>Heure : </p>
+		</td>
+		<td>
+			<p>{{heure}} h</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Date : </p>
+		</td>
+		<td>
+			<p>{{date}}</p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>Type d'imagerie: </p>
+		</td>
+		<td>
+			<p> {{type}}</p>
+
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p> Tarif : </p>
+		</td>
+		<td>
+			<p>{{ tarif   }} $ </p>
+		</td>
+	</tr>
+	
+</table>
+
+
+<a routerLink="/imageries">Retour aux rendez-vous d'imagerie </a>
+</div>

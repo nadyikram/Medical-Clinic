@@ -1,0 +1,38 @@
+<div class="container">
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form (ngSubmit)="onSubmit(formulaire)" #formulaire="ngForm">
+       <div class="form-group">
+        <label for="pname">Nom du patient: </label>
+        <input type="text" id="pname" class="form-control" name="pname" ngModel required>
+      </div>
+      <div class="form-group">
+      	<label for="appointement">Date du rendez-vous:</label>
+	    <input type="date" id="appointement" value="2020-04-22" min="2020-04-04" max="2020-12-31" name="appointement" ngModel required>
+      </div>
+      <div class="form-group" >
+      	<label or="heure">Heure du rendez-vous:</label>
+		<input type="time" id="heure"  min="08:00" max="17:00" required name="heure" ngModel required>
+		<small>Horaire de travail de 8h a 19h</small>
+      </div>          
+      <div class="form-group" >
+      <label for="type"> Nom depistage:</label>
+        <select id="type" class="form-control" name="type" ngModel required >
+          <option value="VIH">L’infection à HIV ou virus du sida</option>
+          <option value="l’hépatite B ">L’hépatite B </option>
+          <option value="la syphilis  ">La syphilis (« vérole »)  </option>
+          <option value="chlamydiose">chlamydiose</option>
+          <option value="lymphogranulomatose vénérienne">Lymphogranulomatose vénérienne</option>
+          <option value="HPV">l’infection à papillomavirus (HPV)</option>
+          <option value="blennoragie">Blennoragie « chaude pisse »</option>
+          <option value=" infections à mycoplasmes">Infections à mycoplasmes</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="formulaire.invalid">Enregistrer</button>
+    </form>
+  </div>
+</div>
+<div>
+<a routerLink="/depistages"><h6>Aller aux rendez-vous de depistage</h6></a>
+</div>
+</div>
